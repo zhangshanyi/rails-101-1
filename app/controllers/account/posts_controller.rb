@@ -3,4 +3,16 @@ class Account::PostsController < ApplicationController
     def index
       @posts = current_user.posts
     end
+
+  def show
+    @posts = Posts.find(params[:id])
+
+    def edit
+      @posts = Posts.find(params[:id])
+   end
+
+   def delete
+     @posts = Posts.find(params[:id])
+    end
+
   end
