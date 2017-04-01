@@ -11,8 +11,14 @@ class Account::PostsController < ApplicationController
       @posts = Posts.find(params[:id])
    end
 
-   def delete
+   def destroy
      @posts = Posts.find(params[:id])
+     @posts.destroy
+     flash[:alert] = "Post deleted"
+     redirect_to posts_path
+   end
+
     end
+
 
   end
